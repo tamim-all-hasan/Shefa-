@@ -2,105 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Shefa 💗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Dearest Shefa</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Georgia", serif;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(180deg, #ff9acb, #ff6fae);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
+      background: linear-gradient(180deg, #ff8fc7, #ff5fa2);
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
+      color: #fff;
     }
 
     .container {
-      width: 100%;
-      max-width: 420px; /* phone size */
-      padding: 25px;
+      max-width: 420px;
+      margin: auto;
+      padding: 24px;
+      position: relative;
+      z-index: 2;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      padding: 30px 25px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 1.6s ease;
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      padding: 32px 26px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.8s ease;
     }
 
     h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
       text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     h2 {
-      text-align: center;
+      font-family: 'Playfair Display', serif;
       font-size: 1rem;
+      text-align: center;
       font-style: italic;
-      font-weight: normal;
       opacity: 0.9;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     p {
+      font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
-      line-height: 1.8;
+      line-height: 1.9;
       margin-bottom: 18px;
-      text-align: left;
     }
 
     .signature {
-      margin-top: 25px;
       text-align: right;
-      font-style: italic;
-      font-size: 1.05rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2rem;
+      margin-top: 22px;
     }
 
-    button {
-      margin-top: 30px;
+    .btn {
       width: 100%;
+      margin-top: 28px;
       padding: 14px;
       border-radius: 40px;
       border: none;
-      font-size: 1rem;
       background: #fff;
       color: #ff4f9a;
+      font-size: 1rem;
       cursor: pointer;
       transition: 0.3s ease;
     }
 
-    button:hover {
+    .btn:hover {
       transform: scale(1.05);
       background: #ffe3ef;
     }
 
-    .heart {
+    /* Floating petals */
+    .petal {
       position: fixed;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 7s linear infinite;
-      opacity: 0.8;
+      top: 100vh;
+      font-size: 18px;
+      animation: float 9s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
     }
 
-    @keyframes floatUp {
+    @keyframes float {
       from {
-        transform: translateY(0) scale(0.8);
+        transform: translateY(0) rotate(0deg);
         opacity: 0;
       }
-      10% { opacity: 1; }
+      20% { opacity: 0.8; }
       to {
-        transform: translateY(-110vh) scale(1.5);
+        transform: translateY(-120vh) rotate(360deg);
         opacity: 0;
       }
     }
@@ -117,6 +124,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
@@ -124,9 +132,7 @@
       <h1>Shefa</h1>
       <h2>The rhythm of my heartbeat, the reason my soul remembers how to breathe…</h2>
 
-      <p>
-        My beloved Shefa,
-      </p>
+      <p>My beloved Shefa,</p>
 
       <p>
         If words could carry the weight of my regret, this letter would tremble in your hands.
@@ -139,11 +145,6 @@
       </p>
 
       <p>
-        I would break myself and rebuild anew if it meant becoming worthy of your forgiveness.
-        I would choose you in every lifetime, in every version of me.
-      </p>
-
-      <p>
         Forgive me, my queen.
         Let me love you better than I ever have before.
       </p>
@@ -152,21 +153,21 @@
         — Yours, beyond forever 💗
       </div>
 
-      <button onclick="showLove()">If your heart still feels mine 💕</button>
+      <button class="btn" onclick="releasePetals()">If your heart still hears mine 🌸</button>
     </div>
   </div>
 
   <script>
-    function showLove() {
+    function releasePetals() {
       for (let i = 0; i < 35; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "💗";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-        document.body.appendChild(heart);
+        const petal = document.createElement("div");
+        petal.className = "petal";
+        petal.innerHTML = "🌸";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = (6 + Math.random() * 5) + "s";
+        document.body.appendChild(petal);
 
-        setTimeout(() => heart.remove(), 10000);
+        setTimeout(() => petal.remove(), 12000);
       }
     }
   </script>
