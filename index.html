@@ -3,21 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Dearest Shefa</title>
+<title>For Shefa</title>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 
   body {
-    min-height:100vh;
     font-family:'Inter', sans-serif;
-    background: #800020; /* deep pink/burgundy */
+    background: #800020;
+    color:#fff;
+    overflow-x:hidden;
+  }
+
+  /* LANDING SECTION */
+  #landing {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+  }
+
+  #landing h1 {
+    font-family:'Dancing Script', cursive;
+    font-size:3rem;
+    margin-bottom:20px;
+  }
+
+  .heart-container {
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition: transform 0.3s ease;
+  }
+
+  .heart-container:hover { transform: scale(1.1); }
+
+  .heart {
+    font-size:120px;
+    color:#ff4f9a;
+    text-shadow: 0 0 20px rgba(255,79,154,0.6);
+    margin-bottom:20px;
+    animation: heartbeat 1s infinite alternate;
+  }
+
+  @keyframes heartbeat { 0%{transform:scale(1);} 100%{transform:scale(1.2);} }
+
+  .heart-text {
+    font-family:'Playfair Display', serif;
+    font-size:1.2rem;
+    max-width:300px;
+    line-height:1.5;
+    opacity:0.9;
+  }
+
+  /* LETTER SECTION */
+  #letter {
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    overflow:hidden;
+    padding:50px 20px;
     position:relative;
-    color:#fff;
   }
 
   .card {
@@ -30,13 +81,7 @@
     box-shadow: 0 25px 70px rgba(0,0,0,0.35);
     text-align:center;
     position: relative;
-    z-index:2; /* above hearts */
-  }
-
-  h1 {
-    font-family:'Dancing Script', cursive;
-    font-size:2.6rem;
-    margin-bottom:6px;
+    z-index:2;
   }
 
   h2 {
@@ -62,7 +107,7 @@
     margin-top:22px;
   }
 
-  .btn {
+  .btn-heart {
     margin-top:28px;
     padding:14px;
     border-radius:40px;
@@ -70,23 +115,20 @@
     cursor:pointer;
     font-weight:600;
     font-size:0.95rem;
-    transition:all 0.3s ease;
-  }
-
-  .btn-heart {
     background:#ff4f9a;
     color:#fff;
+    transition:all 0.3s ease;
   }
 
   .btn-heart:hover { transform:scale(1.05); }
 
-  /* floating hearts for whole screen */
-  .heart {
+  /* floating hearts */
+  .heart-float {
     position:fixed;
     bottom:-20px;
     font-size:20px;
     animation:floatUp 8s linear infinite;
-    z-index:1; /* behind card */
+    z-index:1;
     opacity:0.8;
   }
 
@@ -99,25 +141,41 @@
 </head>
 <body>
 
-<div class="card">
-  <h1>Shefa</h1>
-  <h2>The rhythm of my heartbeat...</h2>
+<!-- LANDING -->
+<section id="landing">
+  <h1>For Shefa</h1>
+  <div class="heart-container" onclick="scrollToLetter()">
+    <div class="heart">💖</div>
+    <div class="heart-text">A PRIVATE MESSAGE AWAITS<br>Tap the heart to enter my soul</div>
+  </div>
+</section>
 
-  <p>To my beautiful Shefa,</p>
-  <p>I'm writing this because sometimes words fail me when I'm looking into your eyes. I am so incredibly sorry for letting you down. You deserve nothing but the best, and I promise to be better, every single day.</p>
-  <p>You are the light in my darkness, the peace in my chaos. Life without you is just a series of silent moments, but with you, it's a melody.</p>
-  <p>Please forgive me, my queen.</p>
+<!-- LETTER -->
+<section id="letter">
+  <div class="card">
+    <h1>Shefa</h1>
+    <h2>The rhythm of my heartbeat...</h2>
 
-  <div class="signature">— Yours forever, always 💗</div>
+    <p>To my beautiful Shefa,</p>
+    <p>I'm writing this because sometimes words fail me when I'm looking into your eyes. I am so incredibly sorry for letting you down. You deserve nothing but the best, and I promise to be better, every single day.</p>
+    <p>You are the light in my darkness, the peace in my chaos. Life without you is just a series of silent moments, but with you, it's a melody.</p>
+    <p>Please forgive me, my queen.</p>
 
-  <button class="btn btn-heart" onclick="releaseHearts()">If your heart still hears mine 🌸</button>
-</div>
+    <div class="signature">— Yours forever, always 💗</div>
+
+    <button class="btn-heart" onclick="releaseHearts()">If your heart still hears mine 🌸</button>
+  </div>
+</section>
 
 <script>
+function scrollToLetter(){
+  document.getElementById('letter').scrollIntoView({behavior:'smooth'});
+}
+
 function releaseHearts(){
   for(let i=0;i<40;i++){
     const heart=document.createElement('div');
-    heart.className='heart';
+    heart.className='heart-float';
     heart.innerHTML=Math.random()>0.5?'💗':'🌸';
     heart.style.left=Math.random()*100+'vw';
     heart.style.animationDuration=(5+Math.random()*5)+'s';
