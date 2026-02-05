@@ -137,6 +137,23 @@
     20% { opacity:0.9; }
     100% { transform: translateY(-120vh) rotate(360deg); opacity:0; }
   }
+
+  /* LOVE MESSAGE */
+  #loveMessage {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-family:'Dancing Script', cursive;
+    font-size:4rem;
+    color:#ff4f9a;
+    text-shadow:0 0 30px rgba(255,79,154,0.8);
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 1s ease;
+    z-index:999;
+    text-align:center;
+  }
 </style>
 </head>
 <body>
@@ -163,9 +180,12 @@
 
     <div class="signature">— Yours forever, always 💗</div>
 
-    <button class="btn-heart" onclick="releaseHearts()">If your heart still hears mine 🌸</button>
+    <button class="btn-heart" onclick="showLoveMessage()">If your heart still hears mine 🌸</button>
   </div>
 </section>
+
+<!-- LOVE MESSAGE -->
+<div id="loveMessage">Shefa, I love U 💖</div>
 
 <script>
 function scrollToLetter(){
@@ -183,6 +203,14 @@ function releaseHearts(){
     document.body.appendChild(heart);
     setTimeout(()=>heart.remove(),10000);
   }
+}
+
+function showLoveMessage(){
+  releaseHearts();
+  const msg = document.getElementById('loveMessage');
+  msg.style.opacity = 1;
+  // optional: fade out after 4 seconds
+  setTimeout(()=>{ msg.style.opacity=0; },4000);
 }
 </script>
 
