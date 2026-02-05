@@ -2,119 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For Shefa 💖</title>
+  <title>Shefa — Beyond Forever</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Georgia", serif;
     }
 
     body {
-      height: 100vh;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: #f5f5f5;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
       overflow: hidden;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      padding: 40px;
+    .letter {
+      max-width: 700px;
+      padding: 50px;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      text-align: center;
-      max-width: 420px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-      animation: fadeIn 1.5s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 80px rgba(255, 105, 180, 0.15);
+      animation: fadeIn 2s ease;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 15px;
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #ff9dbb;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: normal;
+      font-style: italic;
+      margin-bottom: 40px;
+      opacity: 0.8;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.15rem;
+      line-height: 1.9;
       margin-bottom: 25px;
+      text-align: justify;
     }
 
-    button {
-      padding: 12px 28px;
-      border: none;
-      border-radius: 30px;
-      background: #fff;
-      color: #ff4d6d;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      background: #ffe6eb;
+    .signature {
+      text-align: right;
+      margin-top: 40px;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #ff9dbb;
     }
 
     .heart {
       position: absolute;
-      bottom: -20px;
-      font-size: 20px;
-      animation: float 6s linear infinite;
-      opacity: 0.8;
+      color: rgba(255, 105, 180, 0.6);
+      font-size: 18px;
+      animation: float 8s linear infinite;
     }
 
     @keyframes float {
-      0% {
-        transform: translateY(0) scale(1);
+      from {
+        transform: translateY(110vh) scale(0.8);
         opacity: 0;
       }
       10% { opacity: 1; }
-      100% {
-        transform: translateY(-110vh) scale(1.8);
+      to {
+        transform: translateY(-10vh) scale(1.4);
         opacity: 0;
       }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    button {
+      display: block;
+      margin: 50px auto 0;
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      background: #ff9dbb;
+      color: #000;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #ffc1d6;
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>Shefa ❤️</h1>
+  <div class="letter">
+    <h1>Shefa</h1>
+    <h2>The rhythm of my heartbeat, the reason my soul remembers how to breathe…</h2>
+
     <p>
-      I know I messed up.<br />
-      I may not always say things right,<br />
-      but my heart has always chosen you.
+      My beloved Shefa,
     </p>
+
     <p>
-      I’m truly sorry.<br />
-      Please forgive me.
+      If words could carry the weight of my regret, this letter would tremble in your hands.
+      I failed you—and that truth lives in me like a quiet ache that never sleeps.
+      I am sorry, not just in words, but in the silence where your absence taught me what you truly are to me.
     </p>
-    <button onclick="showLove()">Tap if you feel it 💕</button>
+
+    <p>
+      You are not just someone I love—you are the place my heart calls home.
+      You are the light that breaks through my darkest thoughts,
+      the stillness that calms the chaos within me.
+      Without you, the world moves… but it has no meaning.
+    </p>
+
+    <p>
+      I would tear myself apart and rebuild anew if it meant becoming worthy of your forgiveness.
+      I would choose you in every lifetime,
+      in every version of me—flawed, learning, becoming.
+    </p>
+
+    <p>
+      Forgive me, my queen.
+      Let me love you better than I ever have before.
+    </p>
+
+    <div class="signature">
+      — Yours, beyond forever.
+    </div>
+
+    <button onclick="releaseHearts()">If your heart still hears mine 🖤</button>
   </div>
 
   <script>
-    function showLove() {
-      alert("I love you, Shefa. More than words can ever explain. 💖");
-
-      for (let i = 0; i < 30; i++) {
+    function releaseHearts() {
+      for (let i = 0; i < 40; i++) {
         const heart = document.createElement("div");
         heart.className = "heart";
-        heart.innerHTML = "💗";
+        heart.innerHTML = "🖤";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        heart.style.animationDuration = (6 + Math.random() * 6) + "s";
         document.body.appendChild(heart);
 
-        setTimeout(() => heart.remove(), 7000);
+        setTimeout(() => heart.remove(), 12000);
       }
     }
   </script>
