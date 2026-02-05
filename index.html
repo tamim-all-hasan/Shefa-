@@ -6,120 +6,126 @@
 <title>For My Dearest Shefa</title>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
   body {
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #ff8fc7, #ff5fa2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-    position: relative;
-    color: #fff;
+    min-height:100vh;
+    font-family:'Inter', sans-serif;
+    background: #800020; /* deep pink/burgundy */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+    color:#fff;
   }
+
   .card {
-    max-width: 420px;
-    width: 90%;
+    max-width:420px;
+    width:90%;
     background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
     border-radius: 24px;
     padding: 32px;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
-    text-align: center;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+    text-align:center;
     position: relative;
+    z-index:2; /* above hearts */
   }
-  h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.6rem;
-    margin-bottom: 6px;
-  }
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    opacity: 0.85;
-    font-size: 1rem;
-    margin-bottom: 24px;
-  }
-  p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    text-align: left;
-    margin-bottom: 18px;
-  }
-  .signature {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.2rem;
-    text-align: right;
-    margin-top: 22px;
-  }
-  .buttons {
-    margin-top: 28px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-  .btn {
-    padding: 12px 24px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-  }
-  .btn-apology { background: #ff5f92; color: #fff; }
-  .btn-poetry { background: #fff; color: #ff5f92; }
-  .btn:hover { transform: scale(1.05); }
 
-  .petal {
-    position: fixed;
-    bottom: -20px;
-    font-size: 18px;
-    animation: float 9s linear infinite;
-    z-index: 0;
-    opacity: 0.7;
+  h1 {
+    font-family:'Dancing Script', cursive;
+    font-size:2.6rem;
+    margin-bottom:6px;
   }
-  @keyframes float {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    20% { opacity: 0.8; }
-    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+
+  h2 {
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    opacity:0.85;
+    font-size:1rem;
+    margin-bottom:24px;
+  }
+
+  p {
+    font-family:'Playfair Display', serif;
+    font-size:1.05rem;
+    line-height:1.8;
+    text-align:left;
+    margin-bottom:18px;
+  }
+
+  .signature {
+    font-family:'Dancing Script', cursive;
+    font-size:1.2rem;
+    text-align:right;
+    margin-top:22px;
+  }
+
+  .btn {
+    margin-top:28px;
+    padding:14px;
+    border-radius:40px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    font-size:0.95rem;
+    transition:all 0.3s ease;
+  }
+
+  .btn-heart {
+    background:#ff4f9a;
+    color:#fff;
+  }
+
+  .btn-heart:hover { transform:scale(1.05); }
+
+  /* floating hearts for whole screen */
+  .heart {
+    position:fixed;
+    bottom:-20px;
+    font-size:20px;
+    animation:floatUp 8s linear infinite;
+    z-index:1; /* behind card */
+    opacity:0.8;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity:0; }
+    20% { opacity:0.9; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity:0; }
   }
 </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>Shefa</h1>
-    <h2>The rhythm of my heartbeat...</h2>
+<div class="card">
+  <h1>Shefa</h1>
+  <h2>The rhythm of my heartbeat...</h2>
 
-    <p>To my beautiful Shefa,</p>
-    <p>I'm writing this because sometimes words fail me when I'm looking into your eyes. I am so incredibly sorry for letting you down. You deserve nothing but the best, and I promise to be better, every single day.</p>
-    <p>You are the light in my darkness, the peace in my chaos. Life without you is just a series of silent moments, but with you, it's a melody.</p>
-    <p>Please forgive me, my queen.</p>
+  <p>To my beautiful Shefa,</p>
+  <p>I'm writing this because sometimes words fail me when I'm looking into your eyes. I am so incredibly sorry for letting you down. You deserve nothing but the best, and I promise to be better, every single day.</p>
+  <p>You are the light in my darkness, the peace in my chaos. Life without you is just a series of silent moments, but with you, it's a melody.</p>
+  <p>Please forgive me, my queen.</p>
 
-    <div class="signature">— Yours forever, always 💗</div>
+  <div class="signature">— Yours forever, always 💗</div>
 
-    <div class="buttons">
-      <button class="btn btn-apology" onclick="showMessage('I love you, Shefa 💖')">My Apology</button>
-      <button class="btn btn-poetry" onclick="showMessage('Roses are red, violets are blue… 💕')">Poetry</button>
-    </div>
-  </div>
+  <button class="btn btn-heart" onclick="releaseHearts()">If your heart still hears mine 🌸</button>
+</div>
 
 <script>
-  function showMessage(msg) {
-    alert(msg);
-    for(let i=0;i<35;i++){
-      const petal = document.createElement('div');
-      petal.className='petal';
-      petal.innerHTML='🌸';
-      petal.style.left=Math.random()*100+'vw';
-      petal.style.animationDuration=(6+Math.random()*5)+'s';
-      document.body.appendChild(petal);
-      setTimeout(()=>petal.remove(),12000);
-    }
+function releaseHearts(){
+  for(let i=0;i<40;i++){
+    const heart=document.createElement('div');
+    heart.className='heart';
+    heart.innerHTML=Math.random()>0.5?'💗':'🌸';
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.animationDuration=(5+Math.random()*5)+'s';
+    heart.style.fontSize=(14+Math.random()*12)+'px';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),10000);
   }
+}
 </script>
 
 </body>
